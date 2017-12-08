@@ -4,9 +4,17 @@
              x:Class="AirExchangerMobile.Pages.User.UserLoginPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Sign in to user account." Margin="0,20" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+
+            <Entry x:Name="Email" Placeholder="Email" Keyboard="Email"/>
+
+            <Entry x:Name="Password" Placeholder="Password" IsPassword="True"/>
+
+            <Label x:Name="LoginInfo" Text="Login failed." TextColor="Red" IsVisible="False" Margin="0,20" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+
+            <Button Clicked="LoginButton_Clicked" Text="Sign in"/>
+
+            <Button Clicked="ReginstrationButton_Clicked" Text="Register"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

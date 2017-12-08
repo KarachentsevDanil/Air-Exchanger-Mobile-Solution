@@ -4,9 +4,19 @@
              x:Class="AirExchangerMobile.Pages.User.UserRegistrationPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Create new account." Margin="0,20" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+
+            <Entry x:Name="Name" Placeholder="Company Name"/>
+
+            <Entry x:Name="Email" Placeholder="Email" Keyboard="Email"/>
+
+            <Entry x:Name="Password" Placeholder="Password" IsPassword="True"/>
+
+            <Label x:Name="RegisterFailed" Text="Registration failed." TextColor="Red" IsVisible="False" Margin="0,20" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+
+            <Button Clicked="RegisterButton_Clicked" Text="Register company"/>
+
+            <Button Clicked="BackButton_Clicked" Text="Back"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

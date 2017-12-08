@@ -65,11 +65,17 @@
     <Compile Include="Pages\Plane\AddPlaneModelPage.xaml.cs">
       <DependentUpon>AddPlaneModelPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Plane\PlaneDetailsPage.xaml.cs">
+      <DependentUpon>PlaneDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Plane\PlanesPage.xaml.cs">
       <DependentUpon>PlanesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Rent\AddRentPage.xaml.cs">
       <DependentUpon>AddRentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Rent\RentDetailsPage.xaml.cs">
+      <DependentUpon>RentDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Rent\RentsPage.xaml.cs">
       <DependentUpon>RentsPage.xaml</DependentUpon>
@@ -81,6 +87,9 @@
       <DependentUpon>UserRegistrationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\Plane\PlaneDetailsPageViewModel.cs" />
+    <Compile Include="ViewModel\Plane\PlanesPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -109,9 +118,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Pages\User\UserLoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -150,6 +157,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\Rent\RentsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Plane\PlaneDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Rent\RentDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

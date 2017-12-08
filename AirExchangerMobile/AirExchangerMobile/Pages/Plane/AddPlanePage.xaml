@@ -4,9 +4,21 @@
              x:Class="AirExchangerMobile.Pages.Plane.AddPlane">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Add new plane." Margin="0,20" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Select plane model" Margin="0,5" FontSize="Small"/>
+
+            <Picker x:Name="PlaneModelSelector">
+
+            </Picker>
+
+            <Entry x:Name="PricePerFlight" Placeholder="PricePerFlight" Keyboard="Numeric"/>
+
+            <Entry x:Name="CountPlanes" Placeholder="Count Planes" Keyboard="Numeric"/>
+
+            <Label x:Name="AddPlaneFailed" Text="Add plane failed." TextColor="Red" IsVisible="False" Margin="0,20" HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+
+            <Button Clicked="AddPlaneButton_Clicked" Text="Add robot model"/>
+            <Button Clicked="BackButton_Clicked" Text="Back"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
