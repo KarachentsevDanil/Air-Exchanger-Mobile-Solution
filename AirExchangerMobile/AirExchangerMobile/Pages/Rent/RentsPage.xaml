@@ -2,11 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AirExchangerMobile.Pages.Rent.RentsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Log off" Clicked="LogOff_OnClicked" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="ItemsListView" 
+                      ItemsSource="{Binding RentsModel}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="true"
+                      RefreshCommand="{Binding LoadRentsCommand}"
+                      IsPullToRefreshEnabled="true"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      CachingStrategy="RecycleElement"
+                      SeparatorColor="Black"
+                      SeparatorVisibility="None"
+                      ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="#:" FontSize="Medium"/>
+                                    <Label Text="{Binding RentId}" FontSize="Medium" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Company:" FontSize="Medium"/>
+                                    <Label Text="{Binding Company.Name}" FontSize="Medium" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Count Flights:" FontSize="Medium"/>
+                                    <Label Text="{Binding CountFlights}" FontSize="Medium" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Feedback:" FontSize="Medium"/>
+                                    <Label Text="{Binding Feedback}" FontSize="Medium" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Total Price:" FontSize="Medium"/>
+                                    <Label Text="{Binding TotalPrice}" FontSize="Medium" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

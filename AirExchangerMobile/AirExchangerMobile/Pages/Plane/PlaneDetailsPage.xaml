@@ -9,7 +9,7 @@
             <StackLayout Spacing="20" Padding="15">
                 <StackLayout Orientation="Horizontal">
                     <Label Text="#:" FontSize="Medium"/>
-                    <Label Text="{Binding Plane.RobotId}" FontSize="Medium" />
+                    <Label Text="{Binding Plane.PlaneId}" FontSize="Medium" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Company:" FontSize="Medium"/>
@@ -47,7 +47,7 @@
                                     <StackLayout>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="#:" FontSize="Medium"/>
-                                            <Label Text="{Binding RentId}" FontSize="Medium" />
+                                            <Label Text="{Binding Rent.RentId}" FontSize="Medium" />
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="Company:" FontSize="Medium"/>

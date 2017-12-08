@@ -74,6 +74,9 @@
     <Compile Include="Pages\Rent\AddRentPage.xaml.cs">
       <DependentUpon>AddRentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Rent\CompleteRent.xaml.cs">
+      <DependentUpon>CompleteRent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Rent\RentDetailsPage.xaml.cs">
       <DependentUpon>RentDetailsPage.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,8 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\Plane\PlaneDetailsPageViewModel.cs" />
     <Compile Include="ViewModel\Plane\PlanesPageViewModel.cs" />
+    <Compile Include="ViewModel\Rents\RentDetailsPageViewModel.cs" />
+    <Compile Include="ViewModel\Rents\RentsPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -118,7 +123,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Rent\CompleteRent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\User\UserLoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

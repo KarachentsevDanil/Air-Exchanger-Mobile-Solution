@@ -1,12 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AirExchangerMobile.Pages.Rent.RentDetailsPage">
+             x:Class="AirExchangerMobile.Pages.Rent.RentDetailsPage"
+             Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Spacing="20" Padding="15">
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="#:" FontSize="Medium"/>
+                    <Label Text="{Binding Rent.RentId}" FontSize="Medium" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Company:" FontSize="Medium"/>
+                    <Label Text="{Binding Rent.Company.Name}" FontSize="Medium" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Count Flights:" FontSize="Medium"/>
+                    <Label Text="{Binding Rent.CountFlights}" FontSize="Medium" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Feedback:" FontSize="Medium"/>
+                    <Label Text="{Binding Rent.Feedback}" FontSize="Medium" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Total Price:" FontSize="Medium"/>
+                    <Label Text="{Binding Rent.TotalPrice}" FontSize="Medium" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Rents of plane" FontSize="Large" Margin="0,20" HorizontalTextAlignment="Center"/>
+
+                <ListView x:Name="RentsList"
+                          HasUnevenRows="True"
+                          SeparatorColor="Black"
+                          ItemsSource="{Binding Rent.Planes}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="#:" FontSize="Medium"/>
+                                            <Label Text="{Binding Plane.PlaneId}" FontSize="Medium" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Company:" FontSize="Medium"/>
+                                            <Label Text="{Binding Plane.Company.Name}" FontSize="Medium" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Model:" FontSize="Medium"/>
+                                            <Label Text="{Binding Plane.PlaneModel.Name}" FontSize="Medium" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Type:" FontSize="Medium"/>
+                                            <Label Text="{Binding Plane.PlaneModel.PlaneType.Name}" FontSize="Medium" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Description:" FontSize="Medium"/>
+                                            <Label Text="{Binding Plane.PlaneModel.Description}" FontSize="Medium" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Price Per Flight:" FontSize="Medium"/>
+                                            <Label Text="{Binding Plane.CostPerFlight}" FontSize="Medium" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
